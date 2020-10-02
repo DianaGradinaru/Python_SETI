@@ -9,7 +9,7 @@ def decimal_to_binary(decimal_number):
 
 
 print("\n")
-print(decimal_to_binary(20))
+print(f"Your number in binary is: {decimal_to_binary(20)}")
 
 
 def binary_to_decimal(binary_digits):
@@ -20,7 +20,8 @@ def binary_to_decimal(binary_digits):
     return sum(list_of_numbers)
 
 
-print(binary_to_decimal("10011"))
+print("\n")
+print(f"Your number in decimal is: {binary_to_decimal('10011')}")
 
 
 def decimal_to_base(decimal_number, destination_base):
@@ -33,12 +34,20 @@ def decimal_to_base(decimal_number, destination_base):
 
 
 print("\n")
-print(decimal_to_base(20, 8))
+print(f"Your number in the base you chose is: {decimal_to_base(20, 8)}")
 
 
 def base_to_decimal(digits, original_base):
-    """Returns the decimal (number) representation of an array of digits given in original_base"""
-    pass
+    output = []
+    digits = digits[::-1]
+
+    for i in range(len(digits)):
+        output.append(int(digits[i]) * (original_base ** i))
+    return sum(output)
+
+
+print("\n")
+print(f"Your number in the base you chose is: {base_to_decimal([2,4], 8)}")
 
 
 def digits_as_string(digits, base):
