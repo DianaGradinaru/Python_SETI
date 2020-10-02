@@ -8,12 +8,19 @@ def decimal_to_binary(decimal_number):
     return binary_rep
 
 print("\n")
-print(decimal_to_binary(6))
+print(decimal_to_binary(20))
 
 
 def binary_to_decimal(binary_digits):
-    """Returns the decimal (number) representation of a binary number represented by an array of 0/1 digits"""
-    pass
+    list_of_numbers = []
+    for i in range(len(binary_digits)):
+        list_of_numbers.append(int(binary_digits[len(binary_digits) - i - 1]) *  2 ** i) 
+        
+    return sum(list_of_numbers)
+    
+print(binary_to_decimal("10011"))
+
+
 
 
 def decimal_to_base(decimal_number, destination_base):
