@@ -7,6 +7,7 @@ def decimal_to_binary(decimal_number):
     binary_rep = binary_rep[::-1]
     return binary_rep
 
+
 print("\n")
 print(decimal_to_binary(20))
 
@@ -14,18 +15,25 @@ print(decimal_to_binary(20))
 def binary_to_decimal(binary_digits):
     list_of_numbers = []
     for i in range(len(binary_digits)):
-        list_of_numbers.append(int(binary_digits[len(binary_digits) - i - 1]) *  2 ** i) 
-        
+        list_of_numbers.append(int(binary_digits[len(binary_digits) - i - 1]) * 2 ** i)
+
     return sum(list_of_numbers)
-    
+
+
 print(binary_to_decimal("10011"))
 
 
-
-
 def decimal_to_base(decimal_number, destination_base):
-    """Returns the digits in destination_base representation of the decimal number"""
-    pass
+    result = []
+    while decimal_number >= 1:
+        result.append(decimal_number % destination_base)
+        decimal_number = decimal_number // destination_base
+    result = result[::-1]
+    return result
+
+
+print("\n")
+print(decimal_to_base(20, 8))
 
 
 def base_to_decimal(digits, original_base):
