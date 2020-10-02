@@ -1,6 +1,14 @@
 def decimal_to_binary(decimal_number):
-    """Returns the array of digits in binary representation of a decimal number"""
-    pass
+
+    binary_rep = []
+    while decimal_number >= 1:
+        binary_rep.append(decimal_number % 2)
+        decimal_number = decimal_number // 2
+    binary_rep = binary_rep[::-1]
+    return binary_rep
+
+print("\n")
+print(decimal_to_binary(6))
 
 
 def binary_to_decimal(binary_digits):
